@@ -27,6 +27,10 @@ var grid = {
     	canvas.fillStyle = obj.color;
     canvas.fillRect(obj.x*this.cellWidth, obj.y*this.cellWidth, this.cellWidth, this.cellWidth);
 
+  },
+  clean: function (canvas){
+     canvas.fillStyle = "#000";
+     canvas.fillRect(0,0, 1000, 1000);
   }
 
 }
