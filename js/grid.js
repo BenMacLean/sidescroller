@@ -8,6 +8,9 @@ var grid = {
 
   numberOfColumns: 20,
   numberOfRows: 20,
+  cellWidth: 20,
+
+
   map: [],
   init: function () {
     for (var columnIndex = 0; columnIndex < this.numberOfColumns; columnIndex++) {
@@ -21,6 +24,8 @@ var grid = {
     }
   },
   draw: function (x,y, canvas) {
+    	canvas.fillStyle = "#f00";
+    canvas.fillRect(x*this.cellWidth, y*this.cellWidth, this.cellWidth, this.cellWidth);
 
   }
 

@@ -9,14 +9,14 @@ console.log(grid.map[3][6]);
 
 
 // create and initiate the canvas element
-canvas = document.createElement("canvas");
-canvas.width = COLS * 20;
-canvas.height = ROWS * 20;
-ctx = canvas.getContext("2d");
-// add the canvas element to the body of the document
-document.body.appendChild(canvas);
+var cellWidth = 20;
 
+var foundCanvas = document.getElementById('canvas')
+foundCanvas.width = grid.numberOfColumns * cellWidth;
+foundCanvas.height = grid.numberOfRows * cellWidth;
+canvas = foundCanvas.getContext("2d");
 
+grid.draw(3,6,canvas);
 
 //
 //
