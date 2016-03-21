@@ -3,9 +3,9 @@
 console.log("app.js");
 console.log(grid.hello());
 
+//init
 grid.init();
-console.log(grid.map);
-console.log(grid.map[3][6]);
+
 
 
 // create and initiate the canvas element
@@ -16,7 +16,8 @@ foundCanvas.width = grid.numberOfColumns * cellWidth;
 foundCanvas.height = grid.numberOfRows * cellWidth;
 canvas = foundCanvas.getContext("2d");
 
-grid.draw(3,6,canvas);
+grid.draw(wall, canvas);
+grid.draw(player, canvas);
 
 //
 //

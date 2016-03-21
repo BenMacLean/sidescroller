@@ -23,9 +23,9 @@ var grid = {
       this.map.push(builtRow)
     }
   },
-  draw: function (x,y, canvas) {
-    	canvas.fillStyle = "#f00";
-    canvas.fillRect(x*this.cellWidth, y*this.cellWidth, this.cellWidth, this.cellWidth);
+  draw: function (obj, canvas) {
+    	canvas.fillStyle = obj.color;
+    canvas.fillRect(obj.x*this.cellWidth, obj.y*this.cellWidth, this.cellWidth, this.cellWidth);
 
   }
 
