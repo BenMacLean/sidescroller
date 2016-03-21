@@ -4,7 +4,7 @@ console.log("app.js"); //is this file loading
 console.log(grid.hello());//sanity for grid availability
 
 //init
-
+grid.init();
 
 
 
@@ -30,7 +30,9 @@ function loop() {//game refresh every frame
 //register keylisteners
 
 document.addEventListener("keydown", function(evt) { //when keydown, run this function
-  player.jump();
+  if (evt.keyCode == 32) { //32 is spacebar
+    player.jump();
+  }
 });
 
 loop();//call the loop to start game
