@@ -1,7 +1,7 @@
 //testing sandbox
 
-console.log("app.js");
-console.log(grid.hello());
+console.log("app.js"); //is this file loading
+console.log(grid.hello());//sanity for grid availability
 
 //init
 
@@ -9,18 +9,18 @@ console.log(grid.hello());
 
 
 // create and initiate the canvas element
-var cellWidth = 20;
+var cellWidth = 20; //how many pixles wide/high each block is on screen
 
-var foundCanvas = document.getElementById('canvas')
-foundCanvas.width = grid.numberOfColumns * cellWidth;
-foundCanvas.height = grid.numberOfRows * cellWidth;
-canvas = foundCanvas.getContext("2d");
+var foundCanvas = document.getElementById('canvas');//get me the html canvas to be used in js
+foundCanvas.width = grid.numberOfColumns * cellWidth;//how big canvas based on size of cellWidth and # of rows in grid
+foundCanvas.height = grid.numberOfRows * cellWidth;//how big canvas ''
+canvas = foundCanvas.getContext("2d");//tell canvas to be 2d
 
 //loop
-function loop() {
-  grid.clean(canvas);
-  grid.draw(wall, canvas);
-  grid.draw(player, canvas);
+function loop() {//game refresh every frame
+  grid.clean(canvas);//cleans canvas
+  grid.draw(wall, canvas); //draws the wall on canvas
+  grid.draw(player, canvas); //draws player on canvas
 
 	// When ready to redraw the canvas call the loop function
 	// first. Runs about 60 frames a second
@@ -29,86 +29,8 @@ function loop() {
 
 //register keylisteners
 
-document.addEventListener("keydown", function(evt) {
+document.addEventListener("keydown", function(evt) { //when keydown, run this function
   player.jump();
 });
 
-loop();
-
-
-
-
-//
-//
-
-// var EMPTY = 0;
-// var GROUND = 1;
-// var DUDE = 2;
-// var OB = 3;
-//
-// var KEY_UP = 38;
-//
-// /**
-// * Game objects
-// */
-//
-// canvas,   /* HTMLCanvas */
-// ctx,      /* CanvasRenderingContext2d */
-// keystate, /* Object, used for keyboard inputs */
-// frames,   /* number, used for animation */
-// score;    /* number, keep track of the player score */
-//
-// grid = {
-//
-//   width: null,  /* number, the number of columns */
-//   height: null, /* number, the number of rows */
-//   _grid: null,  /* Array<any>, data representation */
-//
-//   init: function (d, c, r) {
-//     this.width = c;
-//     this.height = r;
-//     this._grid = [];
-//     for (var x = 0; x < c; x++) {
-//       this._grid.push([]);
-//       for (var y = 0; y < r; y++) {
-//         this._grid[x].push(d);
-//       }
-//     }
-//   },
-//
-//   set:function (val, x, y) {
-//     this._grid[x][y] = val;
-//   },
-//
-//   get: function (x, y) {
-//     return this._grid[x][y];
-//   },
-// }
-//
-//
-// /**
-// * Starts the game
-// */
-//
-// function init() {
-// 	score = 0;
-//
-// 	grid.init(EMPTY, COLS, ROWS);
-//
-// /**
-//  * The game loop function, used for game updates and rendering
-//  */
-//
-// function loop() {
-// 	update();
-// 	draw();
-// 	// When ready to redraw the canvas call the loop function
-// 	// first. Runs about 60 frames a second
-// 	window.requestAnimationFrame(loop, canvas);
-// }
-//
-// /**
-//  * Updates the game logic
-//  */
-// function update() {
-// 	frames++;
+loop();//call the loop to start game
