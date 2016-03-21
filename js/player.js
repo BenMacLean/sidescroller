@@ -13,6 +13,6 @@ var player = {
   y: 18,
 
   jump: function(){
-    this.y++;
+    this.y--;
   }
 }

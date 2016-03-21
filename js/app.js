@@ -22,22 +22,15 @@ function loop() {
   grid.draw(wall, canvas);
   grid.draw(player, canvas);
 
-  if
-  player.jump();
 	// When ready to redraw the canvas call the loop function
 	// first. Runs about 60 frames a second
 	window.requestAnimationFrame(loop, canvas);
 }
 
 //register keylisteners
-var keystate = {
 
-}
 document.addEventListener("keydown", function(evt) {
-  keystate[evt.keyCode] = true;
-});
-document.addEventListener("keyup", function(evt) {
-  keystate[evt.keyCode] = false;
+  player.jump();
 });
 
 loop();
